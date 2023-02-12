@@ -1,0 +1,31 @@
+def sum(arr):
+    sum = 0
+    for num in arr:
+        if num > 0:
+            sum += num
+    return sum
+
+
+def multi(arr):
+    multi = 1
+    for num in arr:
+        multi *= num
+    return multi
+
+
+n = int(input("Введите количество элементов списка: "))
+list1 = list()
+for i in range(n):
+    x = int(input())
+    list1.append(x)
+x_min = list1.index(min(list1))
+x_max = list1.index(max(list1))
+if x_min < x_max:
+    list2 = list1[(x_min + 1): x_max]
+elif x_min > x_max:
+    list2 = list1[(x_max + 1): x_min]
+
+
+print()
+print(sum(list1))
+print(multi(list2))
